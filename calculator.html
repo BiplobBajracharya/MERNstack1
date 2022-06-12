@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Calculator</h2>
+    <p>First Number: <input type="text" placeholder="Enter first number..."id="txtN1"></p>
+    <p>Second Number: <input type="text" placeholder="Enter second number..."id="txtN2"></p>
+    <p>Result: <input type="text" placeholder="Your result will be displayed here..." id="txtResult" ></p>
+    <p class="button"><input type="button" value="ADD" onclick="calc()"></p>
+
+    <script src="myscript.js"></script>
+    <script>
+        var calc=function(){
+            // window.alert("hello");
+            //read values (num1,num2)
+            var num1=Number(txtN1.value);    //read from text box
+            var num2=Number(txtN2.value);    //read from text box
+            var c1=new Calculator(num1,num2);
+            c1.add();
+            //set num3 on result
+            var num3=c1.result;
+            // document.getElementById("txtResult").innerHTML=num3;  //innerHTML doesn't work in input type text
+           // document.getElementById("txtResult").value=num3;
+           txtResult.value=num3;
+           // window.alert(num3);
+        }
+    </script>
+</body>
+</html>
